@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R Banushree | Digital Profile</title>
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #eff6ff, #f8fafc 55%, #e0e7ff);
+      --header-bg: linear-gradient(120deg, #172554, #2563eb);
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --text-main: #1f2937;
+      --text-muted: #64748b;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --tag-bg: #dbeafe;
+      --tag-text: #1e40af;
+      --shadow: 0 8px 24px #0f172a0a;
+    }
+
+    [data-theme="dark"] {
+      --bg-gradient: linear-gradient(135deg, #0f172a, #1e1b4b 55%, #020617);
+      --header-bg: linear-gradient(120deg, #090d16, #1e3a8a);
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #3b82f6;
+      --accent-hover: #60a5fa;
+      --tag-bg: #1e3a8a;
+      --tag-text: #bfdbfe;
+      --shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    * { box-sizing: border-box; transition: background 0.3s ease, color 0.3s ease; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: var(--bg-gradient); color: var(--text-main); line-height: 1.6; min-height: 100vh; }
+    
+    .theme-bar { display: flex; justify-content: flex-end; gap: 8px; padding: 10px 20px; background: var(--card-bg); border-bottom: 1px solid var(--card-border); position: sticky; top: 0; z-index: 10; }
+    .theme-btn { background: var(--tag-bg); color: var(--tag-text); border: 1px solid var(--card-border); padding: 5px 12px; border-radius: 12px; cursor: pointer; font-size: 12px; font-weight: bold; }
+    .theme-btn:hover { background: var(--accent); color: white; }
+
+    header { background: var(--header-bg); color: white; padding: 42px 20px; text-align: center; }
+    header .initials { width: 92px; height: 92px; border-radius: 50%; background: #fff; color: #1d4ed8; display: grid; place-items: center; font-size: 30px; font-weight: 800; margin: 0 auto 14px; border: 4px solid #bfdbfe; }
+    header h1 { margin: 6px 0; font-size: clamp(28px,5vw,42px); }
+    header p { margin: 5px auto; max-width: 650px; color: #dbeafe; }
+
+    nav { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; padding: 14px; background: var(--card-bg); position: sticky; top: 41px; box-shadow: 0 3px 14px #0f172a12; z-index: 9; border-bottom: 1px solid var(--card-border); }
+    nav a { color: var(--accent); text-decoration: none; font-weight: 700; padding: 7px 12px; border-radius: 20px; }
+    nav a:hover { background: var(--tag-bg); }
+
+    main { max-width: 1000px; margin: 28px auto; padding: 0 18px; }
+    section { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 18px; padding: 24px; margin-bottom: 20px; box-shadow: var(--shadow); scroll-margin-top: 100px; }
+    h2 { margin-top: 0; color: var(--accent); border-bottom: 2px solid var(--tag-bg); padding-bottom: 9px; }
+    
+    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 14px; }
+    .tile { background: var(--bg-gradient); border: 1px solid var(--card-border); border-radius: 12px; padding: 16px; }
+    .tag { display: inline-block; background: var(--tag-bg); color: var(--tag-text); padding: 5px 10px; border-radius: 16px; font-size: 14px; margin: 4px; font-weight: 600; border: 1px solid var(--card-border); }
+    
+    ul { padding-left: 22px; }
+    label { display: block; font-weight: 700; margin: 12px 0 5px; }
+    input, textarea, select { width: 100%; padding: 11px; border: 1px solid var(--card-border); border-radius: 9px; font: inherit; background: var(--card-bg); color: var(--text-main); }
+    button[type="submit"] { border: 0; background: var(--accent); color: #fff; padding: 11px 17px; border-radius: 9px; font-weight: 700; cursor: pointer; margin-top: 12px; }
+    button[type="submit"]:hover { background: var(--accent-hover); }
+    
+    .social-links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 15px; }
+    .social-btn { display: inline-block; padding: 8px 16px; background: var(--tag-bg); color: var(--tag-text); text-decoration: none; border-radius: 20px; font-weight: 700; font-size: 14px; border: 1px solid var(--card-border); }
+    .social-btn:hover { background: var(--accent); color: white; }
+
+    footer { text-align: center; padding: 25px; color: var(--text-muted); }
+    .small { color: var(--text-muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+
+<div class="theme-bar">
+  <span style="font-size: 12px; align-self: center; color: var(--text-muted);">Theme:</span>
+  <button class="theme-btn" onclick="setTheme('light')">Light</button>
+  <button class="theme-btn" onclick="setTheme('dark')">Dark</button>
+</div>
+
+<header>
+  <div class="initials" aria-label="Banushree initials">RB</div>
+  <p>MY DIGITAL PROFILE</p>
+  <h1>R Banushree</h1>
+  <p>B.Sc. Data Science and Mathematics Student</p>
+  <p>Student ID: 2541363 · Christ University Central Campus, Bengaluru</p>
+</header>
+
+<nav aria-label="Main navigation">
+  <a href="#about">About</a>
+  <a href="#project">Ongoing Project</a>
+  <a href="#education">Education</a>
+  <a href="#skills">Skills</a>
+  <a href="#interests">Interests</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I’m <strong>R Banushree</strong>, a student pursuing a B.Sc. in Data Science and Mathematics at Christ University Central Campus, Bengaluru[cite: 2]. I am deeply interested in exploring how data, mathematics, and Artificial Intelligence (AI) can be combined to understand complex problems and develop smart solutions[cite: 3].</p>
+    <p>I enjoy building my technical knowledge step by step and experimenting with new tools, algorithms, and opportunities to learn[cite: 3].</p>
+  </section>
+
+  <section id="project">
+    <h2>Ongoing Project</h2>
+    <div class="tile" style="margin-bottom: 14px;">
+      <h3 style="margin-top: 0; color: var(--accent);">SmartCharge AI: EV Charger Sharing Platform with LLM-Based Assistance and Machine Learning</h3>
+      <p><strong>Team Members:</strong> Keerthana V (2541341), Misbba MD (2541345), R Banushree (2541363)</p>
+      <p><strong>Overview:</strong> Developing an intelligent full-stack web platform that connects verified homeowners sharing residential EV chargers with electric vehicle users[cite: 3, 7]. The project integrates machine learning for charger recommendations and demand prediction, along with an LLM-powered assistant for natural-language search and guidance[cite: 3, 7, 8].</p>
+    </div>
+    <div>
+      <span class="tag">Python</span>
+      <span class="tag">Flask</span>
+      <span class="tag">Machine Learning</span>
+      <span class="tag">LLM Integration</span>
+      <span class="tag">MySQL</span>
+      <span class="tag">Pandas & NumPy</span>
+      <span class="tag">Leaflet / OpenStreetMap</span>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="grid">
+      <div class="tile">
+        <h3>B.Sc. Data Science and Mathematics</h3>
+        <p>Christ University Central Campus, Bengaluru</p>
+        <p class="small">2025–2028 · Student ID: 2541363</p>
+      </div>
+      <div class="tile">
+        <h3>Core Focus</h3>
+        <p>Programming, data analysis, statistics, mathematical foundations, and AI concepts[cite: 3].</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & Technologies</h2>
+    <p>Tools, languages, and core concepts I am building experience with:</p>
+    <div>
+      <span class="tag">Python</span>
+      <span class="tag">Java</span>
+      <span class="tag">MySQL</span>
+      <span class="tag">Artificial Intelligence (AI)</span>
+      <span class="tag">Data Analysis</span>
+      <span class="tag">Excel</span>
+      <span class="tag">GitHub</span>
+      <span class="tag">Visual Studio Code</span>
+    </div>
+  </section>
+
+  <section id="interests">
+    <h2>Interests & Goals</h2>
+    <div class="grid">
+      <div class="tile">
+        <h3>AI & Data Science</h3>
+        <p>Exploring machine learning, finding patterns in datasets, and building smart solutions.</p>
+      </div>
+      <div class="tile">
+        <h3>Continuous Learning</h3>
+        <p>Improving programming skills and expanding knowledge in new technologies.</p>
+      </div>
+      <div class="tile">
+        <h3>Languages</h3>
+        <p>Learning French and sharpening communication abilities.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Connect & Contact</h2>
+    <p>Reach out to me directly through my professional links or send a message below:</p>
+    
+    <div class="social-links">
+      <a class="social-btn" href="mailto:banushree835@gmail.com">📧 Email Me</a>
+      <a class="social-btn" href="https://www.linkedin.com/in/r-banu-shree-b0610636b" target="_blank">💼 LinkedIn</a>
+      <a class="social-btn" href="https://github.com/rbanushree-ctrl" target="_blank">🐙 GitHub</a>
+    </div>
+
+    <form id="profileForm" style="margin-top: 20px;">
+      <label for="visitorName">Your Name</label>
+      <input id="visitorName" name="visitorName" type="text" placeholder="Enter your name" required>
+      
+      <label for="visitorEmail">Email Address</label>
+      <input id="visitorEmail" name="visitorEmail" type="email" placeholder="name@example.com" required>
+      
+      <label for="reason">Reason for Contact</label>
+      <select id="reason" name="reason">
+        <option>Say hello</option>
+        <option>Academic Collaboration</option>
+        <option>AI / Data Science Project</option>
+      </select>
+      
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="3" placeholder="Write a short message"></textarea>
+      
+      <button type="submit">Send Message</button>
+      <p id="formMessage" role="status" class="small" style="margin-top: 10px; font-weight: bold;"></p>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 R Banushree · Digital Profile Webpage</p>
+  <p class="small">Christ University Central Campus, Bengaluru</p>
+</footer>
+
+<script>
+  function setTheme(themeName) {
+    document.documentElement.setAttribute('data-theme', themeName);
+    localStorage.setItem('banu_theme', themeName);
+  }
+  
+  const savedTheme = localStorage.getItem('banu_theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+
+  document.getElementById('profileForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('formMessage').textContent = 'Thank you! Your message was received successfully.';
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
